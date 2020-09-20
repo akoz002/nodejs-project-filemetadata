@@ -1,25 +1,26 @@
 {
-	"name": "file_metadata",
+	"name": "akoz002-project-file-metadata",
 	"version": "0.0.1",
-	"description": "API project for freeCodeCamp",
+	"description": "freeCodeCamp File Metadata Microservice project",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"start": "node --unhandled-rejections=strict server.js",
+		"test": "node --unhandled-rejections=strict tests/tests.js"
 	},
 	"dependencies": {
+		"cors": "^2.8.1",
+		"dotenv": "^8.2.0",
 		"express": "^5.0.0-alpha.2",
-		"cors": "^2.8.1"
-	},
-	"engines": {
-		"node": "4.4.5"
+		"form-data": "^3.0.0",
+		"multer": "^1.4.2",
+		"node-fetch": "^2.6.1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://hyperdev.com/#!/project/welcome-project"
+		"url": "https://github.com/akoz002/nodejs-project-filemetadata"
 	},
 	"keywords": [
 		"node",
-		"hyperdev",
 		"express"
 	],
 	"license": "MIT"

@@ -31,7 +31,12 @@ function validateFileUpload(testFile) {
       else { // expecting error
         assert.equal(res.status, 400);
         res.text().then(text => {
-          assert.match(text, /No file uploaded/);
+          if (process.env.NODE_ENV === 'production') {
+            assert.match(text, /Bad Request/);
+          }
+          else {
+            assert.match(text, /No file uploaded/);
+          }
           console.log('Successfully validated uploading no file');
         });
       }
@@ -51,6 +56,16 @@ const testFiles = [
 ];
 
 async function runTests() {
+  if (process.env.NODE_ENV === 'production') {
+    console.log('Running tests on production environment');
+  }
+  else {
+    console.log('Running tests on development environment');
+  }
+
+  console.log(`Running tests on app URL: '${process.env.APP_URL}'\n`);
+
+  // validate uploading test files
   for (const testFile of testFiles) {
     await validateFileUpload(testFile);
   }

@@ -70,5 +70,5 @@ app.post('/api/fileanalyse', upload.single('upfile'), function(req, res, next) {
  */
 
 var listener = app.listen(process.env.PORT || 3000, function () {
-  console.log('App listening on port: ' + listener.address().port);
+  console.log('App listening on port: ' + listener.address().port + '\n');
 });

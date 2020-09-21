@@ -1,13 +1,33 @@
 
-# API Project: File Metadata Microservice for freeCodeCamp
-[![Run on Repl.it](https://repl.it/badge/github/freeCodeCamp/boilerplate-project-filemetadata)](https://repl.it/github/freeCodeCamp/boilerplate-project-filemetadata)
-###    User stories:
-1. I can submit a form that includes a file upload.
-2. The form file input field  has the "name" attribute set to "upfile". We rely on this in testing.
-3. When I submit something, I will receive the file name and size in bytes within the JSON response
+# API Project: File Metadata Microservice
 
-### Usage :
+### User stories
+
+1. I can submit a form that includes a file upload.
+2. The form file input field  has the `name` attribute set to `upfile`. We rely on this in testing.
+3. When I submit something, I will receive the file name, type and size in bytes within the JSON response, e.g:
+```
+{ name: 'Desert.jpg', type: 'image/jpeg', size: 845941 }
+```
+
+### Usage
+
 * Go to the main page, and upload a file using the provided form.
 
-### Hint:
-* To handle the file uploading you should use the [multer](https://www.npmjs.com/package/multer) npm package.
+### Implementation
+
+The app is implemented with Node.js and Express. A demo can be found at the link below. The link home page has a web form to upload a file for analysis. 
+
+* https://akoz002-nodejs-file-metadata.herokuapp.com/
+
+Alternatively you can post a `multipart/form-data` encoded file with field name `upfile` to:
+
+`POST https://akoz002-nodejs-file-metadata.herokuapp.com/api/fileanalyse`
+
+#### Tests
+
+A set of basic tests can be found at `tests/tests.js`. The tests can be executed by running `npm test` from the root directory.
+
+The `.env` file contains two parameters for configuring the app and the tests. The `APP_URL` is used by the tests to locate the app server. The `NODE_ENV` tells the tests what environment the app server is running on.
+
+By default the tests will run against the app deployed to the cloud (on Heroku as above), and on the production environment (to match the cloud environment).

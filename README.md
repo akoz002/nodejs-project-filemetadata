@@ -28,6 +28,6 @@ Alternatively you can post a `multipart/form-data` encoded file with field name 
 
 A set of basic tests can be found at `tests/tests.js`. The tests can be executed by running `npm test` from the root directory.
 
-The `.env` file contains two parameters for configuring the app and the tests. The `APP_URL` is used by the tests to locate the app server. The `NODE_ENV` tells the tests what environment the app server is running on.
+The `.env` file contains two parameters for configuring the tests. The `APP_URL` is used by the tests to locate the app server. The `NODE_ENV` tells the tests what environment the app server is running on.
 
 By default the tests will run against the app deployed to the cloud (on Heroku as above), and on the production environment (to match the cloud environment).

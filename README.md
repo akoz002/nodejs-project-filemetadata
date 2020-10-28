@@ -16,7 +16,7 @@
 
 ### Implementation
 
-The app is implemented with Node.js and Express. A demo can be found at the link below. The link home page has a web form to upload a file for analysis. 
+The app is implemented with Node.js and Express. A demo can be found at the link below. The home page has a React web form to upload a file for analysis. React source can be found at `views/js/`.
 
 * https://akoz002-nodejs-file-metadata.herokuapp.com/
 

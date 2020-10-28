@@ -46,6 +46,13 @@ input#button {
   width: 60%;
   min-width: 400px;
 }
+
+.code {
+	background-color: whitesmoke;
+	line-height: 1.7;
+	padding: 1em;
+}
+
 /****** Logo Div Styling ******/
 
 img {

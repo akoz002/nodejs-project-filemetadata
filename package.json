@@ -23,5 +23,10 @@
 		"node",
 		"express"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/cli": "^7.12.1",
+		"@babel/core": "^7.12.3",
+		"@babel/preset-react": "^7.12.1"
+	}
 }

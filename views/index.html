@@ -25,11 +25,8 @@
           Please Upload a File ...
         </p>
         <div class="view">
-          <h4 id="output"></h4>
-          <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse" target="_blank">
-            <input id="inputfield" type="file" name="upfile">
-            <input id="button" type="submit" value="Upload">
-          </form>
+          <!-- React component for uploading files. -->
+          <div id='file-upload-form'></div>
         </div>
       </div>
       <div class="footer">
@@ -37,6 +34,14 @@
           Template by <a href="http://www.freecodecamp.com">freeCodeCamp</a>, implemented by Alex Kozlov
         </p>
       </div>
+
+      <!-- Load React. -->
+      <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+
+      <!-- Load React component. -->
+      <script src="public/fileUploadForm.js"></script>
+
    </body>
 
 

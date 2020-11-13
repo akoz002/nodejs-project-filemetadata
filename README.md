@@ -16,7 +16,7 @@
 
 ### Implementation
 
-The app is implemented with Node.js and Express. A demo can be found at the link below. The home page has a React web form to upload a file for analysis. React source can be found at `views/js/`.
+At the backend the app is implemented with *Node.js* and *Express*. The server source can be found in `server.js`. A demo can be found at the link below. At the frontend the home page has a *React* web form to upload a file for analysis. React source can be found at `views/src/` and it was built with Parcel. Source maps were generated and the original source can be viewed in browser developer tools.
 
 * https://akoz002-nodejs-file-metadata.herokuapp.com/
 

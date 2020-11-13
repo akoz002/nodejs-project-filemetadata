@@ -1,10 +1,11 @@
-'use strict';
+
+import React from 'react';
 
 /*
  * Form to upload a file and display analysis results.
  */
 
-class FileUploadForm extends React.Component {
+export default class FileUploadForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -49,12 +50,3 @@ class FileUploadForm extends React.Component {
     );
   }
 }
-
-/*
- * Render the component.
- */
-
-ReactDOM.render(
-  <FileUploadForm />,
-  document.getElementById('file-upload-form')
-);

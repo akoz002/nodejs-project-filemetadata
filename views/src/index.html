@@ -1,42 +1,56 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>File Analyser</title>
+  <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
 
-   <head>
-      <title>File Metadata</title>
-      <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
-   </head>
+<body>
+  <main>
+    <h1>API Project: File Metadata Microservice</h1>
+    <h2>User Stories:</h2>
+    <ol>
+      <li>
+        I can submit a form object that includes a file upload.
+      </li>
+      <li>
+        The form file input field has the <code>"name"</code> attribute set to
+        <code>"upfile"</code>.
+      </li>
+      <li>
+        When I submit a file, I will receive the file name, type and size in bytes
+        within the JSON response. For example:
+      </li>
+    </ol>
+    <ul class='code-block'>
+      <code>
+        <li>{</li>
+        <ul>
+          <li>"name": "Desert.jpg",</li>
+          <li>"type": "image/jpeg",</li>
+          <li>"size": 845941</li>
+        </ul>
+        <li>}</li>
+      </code>
+    </ul>
 
-   <body>
+    <h2>Usage:</h2>
+    <p>Please Upload a File:</p>
+    <!-- React component for uploading files. -->
+    <div id='file-upload-form'></div>
+  </main>
 
-      <div class="container">
-        <h2>API Project: File Metadata Microservice</h2>
-        <h3>User Stories:</h3>
-        <ol>
-          <li>I can submit a form object that includes a file upload.</li>
-          <li>The form file input field  has the "name" attribute set to "upfile". We rely on this in testing.</li>
-          <li>When I submit something, I will receive the file name, and size in bytes within the JSON response.</li>
-        </ol>
+  <footer>
+    <p>
+      Template by <a href="http://www.freecodecamp.org" target="_blank">freeCodeCamp</a>,
+      implemented by Alex Kozlov.
+    </p>
+  </footer>
 
-        <h3>Usage:</h3>
-        <p>
-          Please Upload a File ...
-        </p>
-        <div class="view">
-          <!-- React component for uploading files. -->
-          <div id='file-upload-form'></div>
-        </div>
-      </div>
-      <div class="footer">
-        <p>
-          Template by <a href="http://www.freecodecamp.com">freeCodeCamp</a>, implemented by Alex Kozlov
-        </p>
-      </div>
-
-      <script src="index.js"></script>
-
-   </body>
-
+  <script src="index.js"></script>
+</body>
 </html>

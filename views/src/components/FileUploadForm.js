@@ -9,6 +9,7 @@ export default class FileUploadForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      uploadingFile: false,
       fileInfo: null
     };
 
@@ -20,7 +21,8 @@ export default class FileUploadForm extends React.Component {
     e.preventDefault();
 
     this.setState({
-      fileInfo: 'Processing file...'
+      uploadingFile: true,
+      fileInfo: null
     });
 
     const formData = new FormData();
@@ -32,20 +34,51 @@ export default class FileUploadForm extends React.Component {
     })
     .then(res => res.json())
     .then(json => this.setState({
-      fileInfo: JSON.stringify(json, null, 1)
+      uploadingFile: false,
+      fileInfo: json
     }))
     .catch(err => console.error(err));
   }
 
+  // formats output value with quotes and/or comma
+  formatValue(key, index, length) {
+    const value = this.state.fileInfo[key];
+    const result = typeof value === "string" ? `"${value}"` : `${value}`;
+    return index < length - 1 ? result + ',' : result;
+  }
+
   render() {
+    let fileInfoResult = null;
+    if (this.state.uploadingFile) {
+      fileInfoResult = (
+        <p className='code-block'>
+          <code>Uploading file...</code>
+        </p>
+      );
+    }
+    else if (this.state.fileInfo) {
+      fileInfoResult = (
+        <ul className='code-block'>
+          <code>
+            <li>{'{'}</li>
+            <ul>
+              {Object.keys(this.state.fileInfo).map((key, index, array) =>
+                <li key={key}>
+                  "{key}": {this.formatValue(key, index, array.length)}
+                </li>
+              )}
+            </ul>
+            <li>{'}'}</li>
+          </code>
+        </ul>
+      );
+    }
+
     return (
       <form onSubmit={this.handleSubmit}>
         <input type="file" required ref={this.fileInput} />
-        <input id="button" type="submit" value="Upload" />
-        {
-          this.state.fileInfo &&
-          <p className='code'><code>{this.state.fileInfo}</code></p>
-        }
+        <input type="submit" value="Upload" />
+        {fileInfoResult}
       </form>
     );
   }

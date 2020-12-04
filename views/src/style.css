@@ -1,61 +1,111 @@
-/****** Main Styling ******/
 
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	color: #222;
-	background-color: #ECF0F1;
+	background-color: #FaFaFa;
+	box-sizing: border-box;
+	max-width: 660px;
+	min-width: 320px;
+	margin: auto;
+	text-align: justify;
+	line-height: 1.4;
+}
+
+main, footer {
+	margin: 2em 0;
+	padding: 0 3%;
+}
+
+h1, h2, p {
 	text-align: center;
 }
 
-.container {
-	padding: 0;
-	margin-top: 40px;
-}
-
-.footer {
-	margin-top: 60px;
+code {
+  font-family: monospace;
+  padding: 2px;
+  color: black;
+  background-color: #fff;
 }
 
 ol {
-	list-style-position: inside;
+	padding-left: 1.1em;
 }
-ul {
-	list-style-type: none;
+
+li {
+  margin-bottom: 1em;
 }
 
 a {
 	color: #2574A9;
 }
 
+form {
+  border: solid 1px black;
+  border-radius: 0.3em;
+  margin: 1em auto;
+  max-width: 600px;
+}
+
 input {
-  display: block;
-  position: relative;
-  margin: 10px auto;
-
-}
-input#button {
-  width: 230px;
-}
-.view {
-  position:relative;
-  margin: auto;
-  margin-top: 40px;
-  border: 1px  solid  #aaa;
-  padding: 20px;
-  width: 60%;
-  min-width: 400px;
-}
-
-.code {
-	background-color: whitesmoke;
-	line-height: 1.7;
-	padding: 1em;
-}
-
-/****** Logo Div Styling ******/
-
-img {
-	margin: 20px auto 0 auto;
+	font-family: arial;
+	font-size: 0.85em;
 	display: block;
+	margin: 1em auto;
+	color: black;
+	border: 1px solid hsl(0, 0%, 40%);
+	border-radius: 0.3em;
+}
+
+input[type="file"] {
+	width: 19em;
+	padding: 0.5em;
+	background-color: white;
+}
+
+input[type="submit"] {
+	width: 8em;
+	padding: 0.4em;
+	background-color: hsl(0, 0%, 93%);
+}
+
+input[type="submit"]:hover {
+	background-color: hsl(0, 0%, 87%);
+	border-color: hsl(0, 0%, 30%);
+}
+
+/* Block of code displaying returned JSON. */
+.code-block {
+	margin: 0 1em 1em;
+	background-color: white;
+	border-radius: 0.5em;
+}
+
+ul {
+	list-style: none;
+}
+
+ul.code-block {
+	padding-left: 1em;
+	text-align: left;
+}
+
+ul.code-block ul {
+	padding-left: 1em;
+}
+
+ul.code-block li {
+	margin: 0;
+}
+
+p.code-block {
+	padding: 1em 0;
+}
+
+/*** Media Queries ***/
+
+@media (max-width: 425px) {
+	body {
+		font-size: 14px;
+	}
 }

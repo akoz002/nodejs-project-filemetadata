@@ -26,8 +26,6 @@ Alternatively you can post a `multipart/form-data` encoded file with field name 
 
 #### Tests
 
-A set of basic tests can be found at `tests/tests.js`. The tests can be executed by running `npm test` from the root directory.
+A set of basic tests can be found at `tests/tests.js`. To execute the tests in a local environment, first start the server with `npm start`. Then to execute the tests run `npm test`. Environment variable `APP_URL` is used by the tests to locate the app server. This defaults to a local server at `http://localhost:3000/api/fileanalyse/`. 
 
-The `.env` file contains two parameters for configuring the tests. The `APP_URL` is used by the tests to locate the app server. The `NODE_ENV` tells the tests what environment the app server is running on.
-
-By default the tests will run against the app deployed to the cloud (on Heroku as above), and on the production environment (to match the cloud environment).
+Environment variable `NODE_ENV` may also need to be defined in the local environment, as it tells the tests what environment the app server is running on. If undefined it defaults to a development environment. You can also define a local `.env` file, and it will be read by the app.

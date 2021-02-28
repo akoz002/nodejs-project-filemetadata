@@ -9,6 +9,8 @@ const fetch = require('node-fetch');
 const assert = require('assert').strict;
 require('dotenv').config();
 
+const APP_URL = process.env.APP_URL || 'http://localhost:3000/api/fileanalyse/';
+
 /*
  * Upload a file and validate the response.
  */
@@ -19,7 +21,7 @@ function validateFileUpload(testFile) {
     form.append('upfile', fs.createReadStream(testFileDir + testFile.name));
   }
 
-  return fetch(process.env.APP_URL, { method: 'POST', body: form })
+  return fetch(APP_URL, { method: 'POST', body: form })
     .then(res => {
       if (testFile) { // expecting successful response
         assert.equal(res.status, 200);
@@ -63,7 +65,7 @@ async function runTests() {
     console.log('Running tests on development environment');
   }
 
-  console.log(`Running tests on app URL: '${process.env.APP_URL}'\n`);
+  console.log(`Running tests on app URL: '${APP_URL}'\n`);
 
   // validate uploading test files
   for (const testFile of testFiles) {
